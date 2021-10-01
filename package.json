@@ -1,0 +1,26 @@
+{
+  "name": "lyrics_scraper",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "repository": "git@github.com:vilvai/lyrics_scraper.git",
+  "author": "Ville Vainio <ville.vainio1@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": "16.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start-scraper": "ts-node src/index.ts",
+    "lint": "eslint . --ext .tsx,.ts,.js"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  }
+}
