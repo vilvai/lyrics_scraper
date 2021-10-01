@@ -28,6 +28,7 @@
     "keyword-spacing": ["error", { "before": true, "after": true }],
     "space-before-blocks": "error",
     "space-infix-ops": "error",
-    "@typescript-eslint/switch-exhaustiveness-check": "error"
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-explicit-any": "off"
   }
 }
