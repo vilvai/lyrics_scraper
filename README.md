@@ -7,6 +7,6 @@ Nowadays you can search online and find lyrics for almost any song. However, it'
 With this tool you can scrape [https://lyrics.fi/](https://lyrics.fi/) to mass-download song lyrics.
 
 ## Usage
-The site [https://lyrics.fi/.all](https://lyrics.fi/.all) lists many finnish song lyrics.
+`yarn fetch-range [startPage] [endPage]` fetches all song lyrics from [lyrics.fi/.all](https://lyrics.fi/.all) site's pages between `startPage` and `endPage` (inclusive) and stores them in `songData` folder grouped under the artist.
 
-`yarn fetch-range [startPage] [endPage]` fetches all song lyrics from that site's pages between `startPage` and `endPage` (inclusive) and stores them in `songData` folder grouped under the artist.
+E.g. `yarn fetch-range 0 157` downloads all 157 pages (~15700 songs) of lyrics available on the website.
