@@ -6,6 +6,7 @@ import type { tNode } from "txml";
 
 const ROOT_URL = "https://lyrics.fi";
 const OUTPUT_FOLDER = "songData";
+const MAX_FILENAME_LENGTH = 100;
 
 const fetchSongUrlsFromPage = async (
   url: string,
@@ -117,7 +118,12 @@ const fetchAllSongsDataFromPage = async (page: number) => {
 
   dataForSongs.forEach(({ lyrics, moods }, i) => {
     const truncatedSongUrl =
-      songUrls[i].length > 255 ? songUrls[i].slice(0, 255) : songUrls[i];
+      songUrls[i].length > MAX_FILENAME_LENGTH
+        ? songUrls[i]
+            .split("/")
+            .map((x) => x.slice(0, MAX_FILENAME_LENGTH / 2))
+            .join("/")
+        : songUrls[i];
     fs.mkdirSync(`${OUTPUT_FOLDER}${truncatedSongUrl}`, { recursive: true });
     fs.writeFileSync(
       `${OUTPUT_FOLDER}${truncatedSongUrl}/lyrics.txt`,
