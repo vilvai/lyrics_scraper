@@ -29,7 +29,10 @@ const fetchSongUrlsFromPage = async (
 
   const urls: string[] = trElements
     .map((element: any) => element.td[0].a[0]["_attributes"].href)
-    .filter((url: string) => !url.includes("//"));
+    .filter(
+      (url: string) =>
+        !url.includes("//") && url.includes("/") && url.split("/")[1] !== ""
+    );
 
   return urls;
 };
